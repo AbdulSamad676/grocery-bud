@@ -1,8 +1,8 @@
 import AuthLayout from "../src/layouts/AuthLayout";
-// import DashboardLayout from "../src/layout/DashbordLayout";
+import DashboardLayout from "../src/layouts/DashboardLayout";
 // import Chat from "../src/pages/Chat";
 // import User from "../src/pages/User";
-// import Dashboard from "../src/pages/Dashboard";
+import Dashboard from "../src/pages/Dashboard/Dashboard";
 import LoginPage from "../src/pages/Login/Login";
 // import Help from "../src/pages/Help";
 import SignUp from "../src/pages/SignUp/SignUp";
@@ -25,11 +25,11 @@ export const routesConfig = [
   // 	component: Register,
   // 	layout: AuthLayout,
   // },
-  //   {
-  //     path: '/dashboard',
-  //     component: Dashboard,
-  //     layout: DashboardLayout,
-  //   },
+  {
+    path: "/dashboard",
+    component: Dashboard,
+    layout: DashboardLayout,
+  },
   //   {
   //     path: '/chat',
   //     component: Chat,

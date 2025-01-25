@@ -1,8 +1,8 @@
 import React from "react";
 const AuthLayout = ({ children }) => {
   return (
-    <div className="flex justify-center items-center">
-      <div className=" flex justify-center items-center ">{children}</div>
+    <div className="flex justify-center items-center w-screen h-screen custom-gradient">
+      {children}
     </div>
   );
 };

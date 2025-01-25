@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.custom-gradient {
+  background: linear-gradient(
+    to bottom,
+    #ecfdf5,
+    #ffffff
+  ); /* emerald-50 and white */
+}
