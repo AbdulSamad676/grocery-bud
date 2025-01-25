@@ -1,14 +1,11 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-
+import React from "react";
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div>Grocery app with Firebase</div>
+      <div className="text-3xl font-bold underline text-red-600">
+        Grocery app with Firebase
+      </div>
     </>
   );
 }
