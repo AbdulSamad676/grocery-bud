@@ -24,7 +24,7 @@ const DashboardLayout = ({ children, title }) => {
   }, [categories]);
 
   return (
-    <div className="grid grid-cols-12 ">
+    <div className="grid grid-cols-12 custom-gradient">
       <div className="col-span-2 h-full min-h-[100vh] border border-gray-300 px-5 py-3">
         {loading && <p>Loading categories...</p>}
         {error && <p className="text-red-500">Error: {error}</p>}
@@ -37,7 +37,7 @@ const DashboardLayout = ({ children, title }) => {
 
       <main className="flex flex-col col-span-10 h-full overflow-auto">
         <div className="header">Header text</div>
-        <div className="w-full">
+        <div className="w-full px-5 py-3">
           {selectedCategory ? (
             <CategoryDetails selectedCategory={selectedCategory} />
           ) : (
