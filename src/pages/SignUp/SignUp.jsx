@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux"; // Import useDispatch
 import { FaReact } from "react-icons/fa";
 import { LuShoppingBasket } from "react-icons/lu";
 import { Link } from "react-router-dom";
-import { signUp } from "../../services/authService"; // Import the signup function from firebaseAuth.js
+import { signUp } from "../../store/slices/AuthSlice"; // Import the signup action from authSlice
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -11,6 +12,8 @@ function SignUp() {
   const [name, setName] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+
+  const dispatch = useDispatch(); // Initialize useDispatch
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +26,7 @@ function SignUp() {
     }
 
     try {
-      await signUp(email, password, name); // Call the signUp function
+      await dispatch(signUp(email, password, name)); // Dispatch the signUp action
       setSuccess(true); // Show success message
     } catch (err) {
       setError(err.message); // Display error message

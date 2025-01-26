@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { LuShoppingBasket } from "react-icons/lu";
 import { Link, useNavigate } from "react-router-dom";
-import { logIn } from "../../services/authService"; // Import the login function
+import { logIn } from "../../store/slices/AuthSlice"; // Import the login function
+import { useDispatch } from "react-redux";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -9,14 +10,14 @@ function Login() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setSuccess(false);
 
     try {
-      await logIn(email, password); // Call the login function
+      await dispatch(logIn(email, password)); // Call the login function
       setSuccess(true); // Show success message
       navigate("/dashboard");
     } catch (err) {
