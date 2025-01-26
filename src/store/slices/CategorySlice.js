@@ -7,7 +7,7 @@ import {
   doc,
   getDoc,
 } from "firebase/firestore";
-import { db } from "../firebaseConfig"; // Adjust this path to your Firebase config
+import { db } from "../../../firebase"; // Adjust this path to your Firebase config
 
 // Step 1: Initial state
 const initialState = {
