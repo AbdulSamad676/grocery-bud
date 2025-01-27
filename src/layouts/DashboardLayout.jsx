@@ -56,12 +56,13 @@
 
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { listenToAuthStateChanges } from "../store/slices/AuthSlice"; // Import the listener action
+// import { listenToAuthStateChanges } from "../store/slices/AuthSlice"; // Import the listener action
 import Sidebar from "../components/Sidebar";
 import CategoryDetails from "../pages/Dashboard/CategoryDetails";
 import DashHeader from "../components/DashHeader";
 import { getAllCategories } from "../store/slices/CategorySlice";
 import Header from "../components/Header";
+import { listenToAuthStateChanges } from "../store/slices/authSlice";
 
 const DashboardLayout = ({ children, title }) => {
   const dispatch = useDispatch();

@@ -35,15 +35,15 @@ const Header = ({ isDashboard }) => {
           </>
         ) : (
           // Display sign-in and sign-up buttons for main layout
-          <nav className="space-x-4">
+          <nav className="space-x-6">
             <button
-              className="text-gray-700"
+              className="text-emerald-600 font-semibold"
               onClick={() => navigate("/login")}
             >
-              Sign In
+              Login
             </button>
             <button
-              className="bg-emerald-600 text-white px-4 py-2 rounded"
+              className="bg-emerald-600 text-white px-5 py-1 rounded"
               onClick={() => navigate("/sign-up")}
             >
               Sign Up
