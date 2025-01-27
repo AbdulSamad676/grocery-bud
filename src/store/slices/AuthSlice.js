@@ -90,9 +90,11 @@ export const logOut = () => async (dispatch) => {
   dispatch(setLoading(true));
   try {
     await signOut(auth);
-    dispatch(clearUser());
+    dispatch(clearUser()); // Clear the currentUser state
   } catch (error) {
     dispatch(setError(error.message));
+  } finally {
+    dispatch(setLoading(false)); // Ensure loading is set to false
   }
 };
 

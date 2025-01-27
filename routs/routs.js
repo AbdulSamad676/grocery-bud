@@ -1,8 +1,10 @@
 import AuthLayout from "../src/layouts/AuthLayout";
 import DashboardLayout from "../src/layouts/DashboardLayout";
+import MainLayout from "../src/layouts/MainLayout";
 // import Chat from "../src/pages/Chat";
 // import User from "../src/pages/User";
 import Dashboard from "../src/pages/Dashboard/Dashboard";
+import LandingPage from "../src/pages/Landing/LandingPage";
 import LoginPage from "../src/pages/Login/Login";
 // import Help from "../src/pages/Help";
 import SignUp from "../src/pages/SignUp/SignUp";
@@ -11,7 +13,7 @@ import SignUp from "../src/pages/SignUp/SignUp";
 
 export const routesConfig = [
   {
-    path: "/",
+    path: "/login",
     component: LoginPage,
     layout: AuthLayout,
   },
@@ -20,11 +22,11 @@ export const routesConfig = [
     component: SignUp,
     layout: AuthLayout,
   },
-  // {
-  // 	path: '/auth/register',
-  // 	component: Register,
-  // 	layout: AuthLayout,
-  // },
+  {
+    path: "/",
+    component: LandingPage,
+    layout: MainLayout,
+  },
   {
     path: "/dashboard",
     component: Dashboard,

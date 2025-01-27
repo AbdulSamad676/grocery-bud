@@ -61,6 +61,7 @@ import Sidebar from "../components/Sidebar";
 import CategoryDetails from "../pages/Dashboard/CategoryDetails";
 import DashHeader from "../components/DashHeader";
 import { getAllCategories } from "../store/slices/CategorySlice";
+import Header from "../components/Header";
 
 const DashboardLayout = ({ children, title }) => {
   const dispatch = useDispatch();
@@ -106,7 +107,8 @@ const DashboardLayout = ({ children, title }) => {
 
       <main className="flex flex-col col-span-10 h-full overflow-auto">
         <div className="header h-16  bg-white border border-gray-200 p-2 flex justify-center items-center">
-          <DashHeader />
+          {/* <DashHeader /> */}
+          <Header isDashboard={true} />
         </div>
         <div className="w-full px-5 py-3">
           {selectedCategory ? (
