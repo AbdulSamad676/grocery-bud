@@ -16,7 +16,7 @@ const MainLayout = ({ children }) => {
       <main className="flex-grow bg-gray-100 px-5">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-emerald-700 text-white p-4 text-center">
+      <footer className="bg-emerald-800 text-white p-4 text-center">
         <Footer />
       </footer>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "../../components/Header";
+// import Header from "../../components/Header";
 import { FaRegCheckCircle, FaRegStar } from "react-icons/fa";
 import { FiShield, FiUsers } from "react-icons/fi";
 import { IoIosSearch, IoMdTime } from "react-icons/io";
@@ -20,28 +20,28 @@ const Hero = () => (
       Smart Grocery Shopping,{" "}
       <span className="text-emerald-600">Made Simple</span>
     </h1>
-    <p className="text-lg text-gray-600 mb-6 w-3/6 mx-auto">
+    <p className="text:sm md:text-lg text-gray-600 mb-6 w-full mx-0  md:w-3/6 md:mx-auto">
       Organize your grocery lists, track prices, and save money with our
       intelligent shopping assistant. Join over 50,000 smart shoppers saving
       time and money every day.
     </p>
-    <div className="space-x-6">
-      <button className="bg-emerald-600 text-white px-6 py-2 rounded">
+    <div className="space-x-1 md:space-x-6">
+      <button className="bg-emerald-600 text-white px-2 md:px-6 py-2 rounded">
         Get Started Free
       </button>
-      <button className="border border-emerald-600 text-emerald-600 px-6 py-2 rounded">
+      <button className="border border-emerald-600 text-emerald-600 px-2 md:px-6  py-2 rounded">
         Watch Demo
       </button>
-      <div className="flex gap-10 justify-center my-5">
-        <div className="rating flex gap-3 items-center">
+      <div className="flex gap-5 md:gap-10 justify-center my-5">
+        <div className="rating flex flex-col md:flex-row gap-1 md:gap-3 items-center">
           <FaRegStar className="text-amber-300" size={24} />
           <p className="font-normal text-gray-700 text-sm">4.9/5 rating</p>
         </div>
-        <div className="users  flex gap-3 items-center">
+        <div className="users  flex flex-col md:flex-row gap-1 md:gap-3 items-center">
           <FiUsers className="text-emerald-600" size={24} />
           <p className="font-normal text-gray-700 text-sm">50K+ users</p>
         </div>
-        <div className="security  flex gap-3 items-center">
+        <div className="security  flex flex-col md:flex-row gap-1 md:gap-3 items-center">
           <FiShield className="text-emerald-600" size={24} />
           <p className="font-normal text-gray-700 text-sm">Secure & Private</p>
         </div>
@@ -76,12 +76,12 @@ const Features = () => (
       ].map((feature, index) => (
         <div
           key={index}
-          className="flex flex-col gap-3 p-6 bg-white shadow-md rounded text-center md:text-left"
+          className="hover:scale-105 transition-transform duration-300 flex flex-col gap-3 p-6 bg-white shadow-md rounded text-center md:text-left"
         >
           <span className="text-emerald-600 p-3 rounded bg-emerald-100 mx-auto md:mx-0 w-fit">
             {feature.icon}
           </span>
-          <h3 className="text-xl font-bold ">{feature.title}</h3>
+          <h3 className="text-xl font-bold">{feature.title}</h3>
           <p className="text-gray-600">{feature.desc}</p>
         </div>
       ))}
@@ -209,7 +209,10 @@ const HowItWorks = () => {
           <div className="flex flex-col md:flex-row my-5 gap-5 justify-between">
             {steps[currentStep].items?.map((item) => {
               return (
-                <div className="stepCard w-full p-4 rounded bg-gray-100 flex gap-3 flex-col items-center hover:bg-emerald-50">
+                <div
+                  className="stepCard hover:scale-105 transition-transform duration-300
+                  w-full p-4 rounded bg-gray-100 flex gap-3 flex-col items-center hover:bg-emerald-50"
+                >
                   <span className="text-emerald-600 text-2xl">{item.icon}</span>
                   <p className="text-sm font-semibold text-gray-700">
                     {item.labelText}
@@ -276,7 +279,7 @@ const Testimonials = () => (
       ].map((testimonial, index) => (
         <div
           key={index}
-          className="p-10 flex flex-col gap-3 bg-white shadow-md rounded"
+          className="hover:scale-105 transition-transform duration-300 p-10 flex flex-col gap-3 bg-white shadow-md rounded"
         >
           <div className="flex items-center gap-2">
             <span className="font-extrabold w-12 h-12 bg-emerald-100 text-emerald-600 flex justify-center items-center rounded-full">
