@@ -18,14 +18,16 @@ const Header = ({ isDashboard }) => {
     <header className="flex justify-between items-center px-5 py-3 w-full bg-white shadow-md">
       <div className="flex items-center gap-5">
         <LuShoppingBasket className="text-emerald-700" size={30} />
-        <p className="text-2xl font-bold text-black">GrocerySave</p>
+        <p className="text-xl md:text-2xl font-bold text-black">GrocerySave</p>
       </div>
 
-      <div className="flex items-center gap-5">
+      <div className="flex flex-col md:flex-row items-center  gap-1 md:gap-5">
         {isDashboard && user ? (
           // Display user email and logout button for dashboard
           <>
-            <p className="userEmail text-emerald-600">{user.email}</p>
+            <p className="userEmail text-emerald-600 text-xs md:text-base">
+              {user.email}
+            </p>
             <button
               className="bg-emerald-700 text-white text-sm md:text-base px-2 md:px-5 py-1 rounded-md"
               onClick={handleLogout}
