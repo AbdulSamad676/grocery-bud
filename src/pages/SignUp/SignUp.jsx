@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux"; // Import useDispatch
 import { FaReact } from "react-icons/fa";
 import { LuShoppingBasket } from "react-icons/lu";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signUp } from "../../store/slices/AuthSlice"; // Import the signup action from authSlice
 
 function SignUp() {
@@ -12,11 +12,13 @@ function SignUp() {
   const [name, setName] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch(); // Initialize useDispatch
-
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     setError("");
     setSuccess(false);
 
@@ -28,6 +30,8 @@ function SignUp() {
     try {
       await dispatch(signUp(email, password, name)); // Dispatch the signUp action
       setSuccess(true); // Show success message
+      setLoading(false);
+      navigate("/login");
     } catch (err) {
       setError(err.message); // Display error message
     }
@@ -116,9 +120,34 @@ function SignUp() {
 
         <button
           type="submit"
-          className="w-full bg-emerald-600 text-white p-2 rounded-md hover:bg-emerald-700 focus:outline-none cursor-pointer"
+          className="flex justify-center w-full bg-emerald-600 text-white p-2 rounded-md hover:bg-emerald-700 focus:outline-none cursor-pointer"
         >
-          Register
+          {loading ? (
+            <>
+              <svg
+                className="w-5 h-5 text-white animate-spin mr-2"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v4a4 4 0 100 8v4a8 8 0 01-8-8z"
+                ></path>
+              </svg>
+            </>
+          ) : (
+            "Register"
+          )}
         </button>
         <p className="text-center">
           Already have an account?{" "}
